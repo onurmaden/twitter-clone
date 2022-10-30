@@ -1,3 +1,4 @@
+import { Timestamp } from "firebase/firestore";
 import React from "react";
 import {
 	CommentIcon,
@@ -23,7 +24,17 @@ const FeedItem = ({ avatar, content, name, timestamp, username }) => {
 							<span className="text-[15px] ml-1">{username}</span>
 							<span className="px-1">·</span>
 							<span className="text-[15px] hover:underline">
-								{timestamp?.toDate().toLocaleTimeString("tr")}
+								{timestamp?.toDate().toLocaleTimeString("tr", {
+									hour: "numeric",
+									minute: "numeric",
+								})}
+								<span className="text-[7px] pl-px align-middle">
+									{timestamp?.toDate().toLocaleDateString("tr", {
+										day: "2-digit",
+										year: "2-digit",
+										month: "long",
+									})}
+								</span>
 							</span>
 						</div>
 						<MoreIcon classname="w-[18.75px] cursor-pointer" />
