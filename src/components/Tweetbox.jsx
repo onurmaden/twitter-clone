@@ -23,12 +23,7 @@ const Tweetbox = () => {
 
 	const sendTweet = () => {
 		if (content !== "") {
-			// setDoc(doc(database, "feed", add()), {
-			// 	name: "ananza",
-			// 	timestamp: serverTimestamp(),
-			// 	yas: "31",
-			// 	content,
-			// });
+
 			const colRef = collection(database, "feed");
 			const data = {
 				name: "Onur MADEN",
@@ -39,34 +34,10 @@ const Tweetbox = () => {
 				avatar: pp,
 			};
 			addDoc(colRef, data);
-			// collection(database, "feed").doc().add({
-			// 	name: "ananza",
-			// 	timestamp: serverTimestamp(),
-			// 	yas: "31",
-			// });
-			// setDoc(doc(database, "feed", 3), {
-			// 	name: "ananza",
-			// 	timestamp: serverTimestamp(),
-			// 	yas: "31",
-			// });
-
-			// collection(database, "feed").setDoc("asfesf").set({
-			// 	displayName: "onurmaden",
-			// 	username: "aewspraer",
-			// 	content,
-			// 	timestamp: serverTimestamp(),
-			// });
+		
 			setContent("");
 		}
-		// if (content !== "") {
-		// 	collection(db, "feed").add({
-		// 		displayName: "Onur MADENasdf",
-		// 		username: "@ronur.madadsfen",
-		// 		content,
-		// 		timestamp: serverTimestamp(Firestore),
-		// 	});
-		// 	setContent("");
-		// }
+		
 	};
 
 	return (
